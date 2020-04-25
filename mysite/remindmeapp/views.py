@@ -23,8 +23,8 @@ def get_response(request):
         message = data['message'] # string message from user
         print(message)
         chat_response = "hello there"#demo_cli.maux("")#"hello there" # chatterbox response to message
-        #audio_source = demo_cli.maux("hi hoe are you i am good what is your name",1651651)
-        audio_source = "demo_output_1651651"
+        audio_source = demo_cli.maux("hello there",164)
+        #audio_source = "demo_output_1651651"
         print(chat_response)
         print(audio_source)
         response['message'] = {'text': chat_response, 'user': False, 'chat_bot': True, 'audio': audio_source}

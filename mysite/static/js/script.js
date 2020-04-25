@@ -64,7 +64,7 @@ function create_bubble_user() {
 			.then(response => response.json()).then((json) => {
 				reply = json['message']['text'];
 				audio = json['message']['audio'];
-				audiosource = "/media/" + audio + ".wav"
+				audiosource = "/media/" + audio// + ".wav"
 				console.log(audiosource);
 			})
 		
