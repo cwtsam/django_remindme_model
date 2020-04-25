@@ -165,7 +165,7 @@ def maux(output_text,num):
 
                 
             # Save it on the disk
-    filexpath = "D:/RemindMe/demo_output_%02d.wav" % num
+    filexpath = "D:/RemindMe/django_remindme_model/mysite/media/demo_output_%02d.wav" % num
     print(generated_wav.dtype)
     librosa.output.write_wav(filexpath, generated_wav.astype(np.float32), 
                                      synthesizer.sample_rate)
@@ -174,5 +174,3 @@ def maux(output_text,num):
     
     return filexpath
 
-if __name__ == '__main__':
-    maux("hi how are you i am fine what is your name my name is tamil selvan ",1261)
