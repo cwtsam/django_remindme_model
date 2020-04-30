@@ -3,7 +3,7 @@ body {
   letter-spacing: 1px;
   font-size: 20px;
   padding: 20px;
-  width: 60%;
+  width: 75%;
   margin: auto;
 }
 
@@ -26,7 +26,7 @@ input {
   max-width: 70%;
   border: 1px solid #cdcdcd;
   border-radius: 20px;
-  padding: 10px 10px;
+  padding: 15px 15px;
   margin-bottom: 10px;
   clear: both;
   
@@ -67,23 +67,30 @@ input {
 
 
 #input_area{
-  width: 60%;
+  width: 100%;
   position: absolute;
   margin: auto;
   bottom: 50px;
+  height: 250px;
+  min-width: 20%;
+  max-width: 75%;
+  text-align: center;
+  background-color: #FFFFFF;
 }
 
 
 #chat-box {
-  width: 90%;
-  position: absolute;
+  /*width: 90%;*/
+  /*position: absolute;*/
   margin: auto;
-  bottom: 50px;
+  /*bottom: 50px;*/
+  text-align: center;
+  font-size: 18px;
 }
 
 #chat-user {
-  width: 70%;
-  height: 50px;
+  width: 20%;
+  height: 40px;
   background-color: #FFFFFF;
   border: 2px solid #cdcdcd;
   border-radius: 20px;
@@ -94,16 +101,23 @@ input {
   transition: border .5s ease, color .5s ease;
 }
 
-#chat-user:focus,
 #chat-user:hover {
   border: 2px solid #ffdc7d; /*rgb(178, 218, 226);*/
   color: #000;
   outline: 0;
 }
 
+#chat-user:focus {
+  border: 2px solid #ffdc7d; /*rgb(178, 218, 226);*/
+  color: #000;
+  outline: 0;
+}
+
+
+
 #chat-submit {
   width: 45px;
-  height: 50px;
+  height: 40px;
   cursor: pointer;
   text-align: center;
   background-color: #FFFFFF;
@@ -117,14 +131,71 @@ input {
   transition: border .5s ease, color .5s ease;
 }
 
-#chat-submit:hover,
-#chat-submit:focus {
+#chat-submit:hover {
   border: 2px solid #ffdc7d; /*#69D2E7;*/
   color: #69D2E7;
   outline: 0;
 }
 
+#chat-submit:focus {
+  border: 2px solid #cdcdcd; /*#69D2E7;*/
+  outline: 0;
+}
 
+
+#info {
+	text-align: center;
+	color: #777;
+  visibility: hidden;
+}
+
+#results {
+	font-size: 20px;
+	font-weight: bold;
+  font-style: italic;
+	padding: 10px 30px 10px 10px;
+	text-align: center;
+	min-height: 20px;
+  margin: auto;
+}
+
+.final {
+  color: black;
+  padding-right: 3px; 
+}
+.interim {
+  color: gray;
+}
+
+.speech_button {
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+
+#start_button {
+	border: 0;
+	background-color:#ffecb8;
+	padding: 10px;
+  margin: auto;
+  border-radius: 40px;
+}
+
+#start_button:focus,
+#start_button:hover {
+  border: 0px solid #ffdc7d; /*rgb(178, 218, 226);*/
+  outline: 0;
+  background-color:#ffdc7d;
+}
+
+
+#start_img {
+  width: 75px;
+
+}
+
+/*
 #speech_submit {
   width: 50px;
   height: 50px;
@@ -147,40 +218,4 @@ input {
   color: #69D2E7;
   outline: 0;
 }
-
-.final {
-	color: black;
-	padding-right: 3px; 
-}
-.interim {
-	color: gray;
-}
-
-.right {
-	float: right;
-}
-
-#info {
-	text-align: center;
-	color: #777;
-  visibility: hidden;
-}
-
-#results {
-	font-size: 14px;
-	font-weight: bold;
-	border: 1px solid #ddd;
-	padding: 15px;
-	text-align: center;
-	min-height: 50px;
-  position: absolute;
-  bottom: 50px;;
-}
-
-#start_button {
-	border: 0;
-	background-color:transparent;
-	padding: 0;
-
-}
-
+*/

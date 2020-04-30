@@ -29,7 +29,19 @@ window.onload=function(){ //somehow we need to load first or not it will return 
         create_bubble_user();
 	});
 	//check_reminder(); //polling for any reminders
+	//submit.style.display = 'none';
 }
+
+
+
+function showSubmit() {
+	if (input.value != ''){
+		submit.style.display = 'inline-block';
+	} else {
+		submit.style.display = 'none';
+	}
+}
+
 
 function create_bubble_user() {
 	if (input.value != '') {
@@ -278,8 +290,8 @@ function create_bubble_user_speech(str) {
 
 
 
-  // info, tells what info to show
-  function showInfo(s) {
+// info, tells what info to show
+function showInfo(s) {
 	if (s) {
 	  for (var child = info.firstChild; child; child = child.nextSibling) {
 		if (child.style) {
@@ -290,23 +302,23 @@ function create_bubble_user_speech(str) {
 	} else {
 	  info.style.visibility = 'hidden';
 	}
-  }
-  // info text, tell user to update browser that support web speech API
-  function upgrade() {
+}
+// info text, tell user to update browser that support web speech API
+function upgrade() {
 	start_button.style.visibility = 'hidden';
 	showInfo('info_upgrade');
-  }
-  // linebreak function
-  var two_line = /\n\n/g;
-  var one_line = /\n/g;
-  function linebreak(s) {
+}
+// linebreak function
+var two_line = /\n\n/g;
+var one_line = /\n/g;
+function linebreak(s) {
 	return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
-  }
-  // capitalize function
-  var first_char = /\S/;
-  function capitalize(s) {
+}
+// capitalize function
+var first_char = /\S/;
+function capitalize(s) {
 	return s.replace(first_char, function(m) { return m.toUpperCase(); });
-  }
+}
   
 
 

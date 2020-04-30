@@ -19,11 +19,13 @@
 
     
     <div id="input_area">
-      <form id='chat-box'>
-          <input type='text' id='chat-user' name='chat-user' placeholder='Type here'>
-          <input type="image" id='chat-submit' src="/static/img/arrowup.svg" alt="Submit" style="width:42x">
-          <!-- <input type="image" id='speech_submit' src="/static/img/mic.svg" onclick="start_speech_input(event)" alt="Speak" style="width:42px"> -->
-      </form>
+
+      <div id="results">
+        <span id="final_span" class="final"></span>
+        <span id="interim_span" class="interim"></span>
+        <p> 
+      </div>
+
       <div id="info">
         <p id="info_start">Click on the microphone icon and begin speaking.</p>
         <p id="info_speak_now">Speak now.</p>
@@ -42,15 +44,18 @@
            Upgrade to <a href="//www.google.com/chrome">Chrome</a>
            version 25 or later.</p>
       </div>
-      <div class="right">
+
+      <div class="speech_button">
         <button id="start_button" onclick="startButton(event)">
         <img id="start_img" src="/static/img/mic.gif" alt="Start"></button>
       </div>
-      <div id="results">
-        <span id="final_span" class="final"></span>
-        <span id="interim_span" class="interim"></span>
-        <p> 
-      </div>
+
+      <form id='chat-box'>
+          <input type='text' id='chat-user' name='chat-user' placeholder='Type here'>
+          <input type="image" id='chat-submit' src="/static/img/arrowup.svg" alt="Submit" style="width:42x">
+          <!-- <input type="image" id='speech_submit' src="/static/img/mic.svg" onclick="start_speech_input(event)" alt="Speak" style="width:42px"> -->
+      </form>
+      
     </div>
     
     <audio id='audio-player'>
