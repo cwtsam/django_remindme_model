@@ -38,8 +38,9 @@ input {
 }
 
 .dialogue-user {
-  background-color: rgb(155, 226, 240);
+  background-color: #ffdc7d;
   float: right;
+  border: 0px;
 }
   
 .navbar {
@@ -65,6 +66,14 @@ input {
 }
 
 
+#input_area{
+  width: 60%;
+  position: absolute;
+  margin: auto;
+  bottom: 50px;
+}
+
+
 #chat-box {
   width: 90%;
   position: absolute;
@@ -75,7 +84,7 @@ input {
 #chat-user {
   width: 70%;
   height: 50px;
-  background-color: transparent;
+  background-color: #FFFFFF;
   border: 2px solid #cdcdcd;
   border-radius: 20px;
   color: #cdcdcd;
@@ -87,7 +96,7 @@ input {
 
 #chat-user:focus,
 #chat-user:hover {
-  border: 2px solid rgb(178, 218, 226);
+  border: 2px solid #ffdc7d; /*rgb(178, 218, 226);*/
   color: #000;
   outline: 0;
 }
@@ -97,7 +106,7 @@ input {
   height: 50px;
   cursor: pointer;
   text-align: center;
-  background-color: transparent;
+  background-color: #FFFFFF;
   border: 2px solid #cdcdcd;
   color: #cdcdcd;
   padding-left: 1.5px;
@@ -110,7 +119,7 @@ input {
 
 #chat-submit:hover,
 #chat-submit:focus {
-  border: 2px solid #69D2E7;
+  border: 2px solid #ffdc7d; /*#69D2E7;*/
   color: #69D2E7;
   outline: 0;
 }
@@ -163,7 +172,9 @@ input {
 	border: 1px solid #ddd;
 	padding: 15px;
 	text-align: center;
-	min-height: 150px;
+	min-height: 50px;
+  position: absolute;
+  bottom: 50px;;
 }
 
 #start_button {
@@ -173,9 +184,3 @@ input {
 
 }
 
-#input_area{
-  width: 60%;
-  position: absolute;
-  margin: auto;
-  bottom: 50px;
-}
