@@ -16,7 +16,7 @@ import wolframalpha # to calculate strings into formula
 
 import time
 
-text1='remind me remainder'
+#text1='remind me remainder'
 
 status_variable="Null"
 Rem_response=""
@@ -41,7 +41,6 @@ def pushremiders(args1):
 def process_text(input): 
     try: 
         
-        
         if 'search' in input or 'play' in input: 
             # a basic web crawler using selenium 
             x=search_web(input) 
@@ -51,34 +50,27 @@ def process_text(input):
         elif 'hi' in input or 'hello' in input or 'good morning' in input or 'hey' in input :
             speak= "Hello, how are you?"
             return speak,"output_00"
-        
-        
+                
         elif 'fine' in input or 'well' in input:
             speak="Good to hear"
             return speak,"output_01"
 
-
-        
         elif "define yourself" in input :
             speak='''Hello, I am Remind me . Your personal Assistant. 
             I am here to make your life easier. You can command me to perform 
             various tasks such as Reminding you daily essential duties or calculating sums or opening applications etcetra'''
             return speak,"output_10"
             
-        
-
         elif "who are you" in input : 
             speak="Who do you think?"
             return speak,"output_06"
 
         elif "who made you" in input or "created you" in input: 
             speak = "I have been created by Augmented Human lab."
-        
             return speak
 
         elif "augmented human lab" in input:# just 
             speak = """Augmented Human Lab is the Best Research Lab."""
-            
             return speak
 
         elif "calculate" in input.lower(): 
@@ -98,26 +90,22 @@ def process_text(input):
             speak="Sunny but it’s not a good idea to go out now"
             return speak,"output_03"
         
-
-        
         elif 'shakespeare' in input:
             speak="To be or not to be, that is the question..."
             return speak,"output_05"
         
-        
         elif 'play' in input and 'song' in input:
             speak="Playing a song for you"
             return speak,"song"
-
         
         elif 'remind me' in input:
             global text1
             text1=input
-            chat_response= "Okay, In how many minutes"
+            chat_response= "In how many minutes"
             return chat_response,"output_07"
         
         elif 'minutes' in input or 'minute' in input:
-            chat_response= "Okay, I'll remind you buddy"
+            chat_response= "Okay I'll remind you buddy"
           
             str1=input
             tim = [int(s) for s in str1.split() if s.isdigit()]
@@ -187,12 +175,9 @@ def Chatbot(text):
     chatresponse,audio_source=process_text(text)
     return chatresponse,audio_source
 
-
 def home(request, template_name="home.html"):
     context = {'title': 'KIN'} ## passes context to template home.html
     return render(request, template_name, context) ## allow rendering of the home page
-
-
 
 @csrf_exempt
 def get_response(request):
@@ -235,7 +220,6 @@ def get_response(request):
             #message = data['message'] # string message from user
             #print(message)
             print("normal chat request")
-        
             chat_response,audio_source=Chatbot(message)
             #chat_response="hello THERE"
             #audio_source = demo_cli.maux(chat_response,176)
@@ -249,11 +233,8 @@ def get_response(request):
     else:
         response['error'] = 'no post data found'
 
-    #status_variable="Null"
-
     return HttpResponse(json.dumps(response), content_type="application/json") 
-            
-### need a signal sent through the response that reminder is there            
+             
 
            
             

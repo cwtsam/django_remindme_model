@@ -28,20 +28,8 @@ window.onload=function(){ //somehow we need to load first or not it will return 
         event.preventDefault();
         create_bubble_user();
 	});
-	//check_reminder(); //polling for any reminders
-	//submit.style.display = 'none';
+	check_reminder(); //polling for any reminders
 }
-
-
-
-function showSubmit() {
-	if (input.value != ''){
-		submit.style.display = 'inline-block';
-	} else {
-		submit.style.display = 'none';
-	}
-}
-
 
 function create_bubble_user() {
 	if (input.value != '') {
@@ -170,7 +158,6 @@ function reminder(){
 	}
 }
 
-
 function startButton(event) {
 	if (recognizing) {
 	  recognition.stop();
@@ -255,7 +242,6 @@ function startButton(event) {
 	  };
   }
   
-
 function create_bubble_user_speech(str) {
 	if (str != '') {
 		var div = document.createElement('DIV');
@@ -287,11 +273,7 @@ function create_bubble_user_speech(str) {
 	}
 }
 
-
-
-
-// info, tells what info to show
-function showInfo(s) {
+function showInfo(s) { // info, tells what info to show
 	if (s) {
 	  for (var child = info.firstChild; child; child = child.nextSibling) {
 		if (child.style) {
@@ -319,11 +301,8 @@ var first_char = /\S/;
 function capitalize(s) {
 	return s.replace(first_char, function(m) { return m.toUpperCase(); });
 }
-  
 
-
-
-
+//Polling notes, previous attempts 
 /*
 async function reminders_subscribe(str){
 	var message = {
@@ -470,7 +449,6 @@ const once = function(checkFn, opts = {}) {
     poll();
   })
 }
-
 
 async function show_reminder() {
   await once(
