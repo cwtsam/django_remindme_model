@@ -208,6 +208,10 @@ function startButton(event) {
 			ignore_onend = true;
 		  }
 	  };
+
+	  recognition.onspeechend = function() {
+	  	console.log('Speech has stopped being detected');
+	  };
   
 	  recognition.onend = function() {
 		  recognizing = false;
@@ -230,6 +234,8 @@ function startButton(event) {
 	  recognition.onresult = function(event) { // for each set of results, it calls this event handler
 		  var interim_transcript = '';
 		  for (var i = event.resultIndex; i < event.results.length; ++i) { //appends any new final text
+		  	clearTimeout(speechtimeout);
+		  	setSpeechTimeout();
 			if (event.results[i].isFinal) {
 			  final_transcript += event.results[i][0].transcript;
 			} else {
@@ -241,6 +247,12 @@ function startButton(event) {
 		  interim_span.innerHTML = linebreak(interim_transcript);
 	  };
   }
+
+var speechtimeout;
+
+function setSpeechTimeout () {
+	speechtimeout = setTimeout(function() {recognition.stop(); }, 5000); // stop recogntion after 5 seconds
+}
   
 function create_bubble_user_speech(str) {
 	if (str != '') {
