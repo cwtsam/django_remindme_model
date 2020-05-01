@@ -45,20 +45,24 @@ def process_text(input):
             # a basic web crawler using selenium 
             x=search_web(input) 
 
+            audio_output = "Here's what I found"
             return x,"output_04"
         
         elif 'hi' in input or 'hello' in input or 'good morning' in input or 'hey' in input :
             speak= "Hello, how are you?"
             return speak,"output_00"
+
+        elif 'how about you' in input or 'about you' in input:
+            speak="Feeling good, what would you like to do?"
+            return speak, "output_09"
                 
         elif 'fine' in input or 'well' in input:
-            speak="Good to hear"
+            speak="Good to hear, what can I do for you?"
             return speak,"output_01"
 
-        elif "define yourself" in input :
-            speak='''Hello, I am Remind me . Your personal Assistant. 
-            I am here to make your life easier. You can command me to perform 
-            various tasks such as Reminding you daily essential duties or calculating sums or opening applications etcetra'''
+        elif "define yourself" in input or "what do you" in input:
+            speak='''I am KIN. A virtual assistant. You can ask me to perform 
+            various tasks such as reminding you to do things, calculations and so on'''
             return speak,"output_10"
             
         elif "who are you" in input : 
@@ -84,7 +88,9 @@ def process_text(input):
             res = client.query(' '.join(query)) 
             answer = next(res.results).text 
             
-            return "The answer is " + answer
+            audio_output = "Here's the answer"
+
+            return "The answer is "+answer,"output_11"
         
         elif 'weather' in input:
             speak="Sunny but it’s not a good idea to go out now"
@@ -94,14 +100,14 @@ def process_text(input):
             speak="To be or not to be, that is the question..."
             return speak,"output_05"
         
-        elif 'play' in input and 'song' in input:
-            speak="Playing a song for you"
-            return speak,"song"
+        #elif 'play' in input and 'song' in input:
+        #    speak="Playing a song for you"
+        #    return speak,"song"
         
         elif 'remind me' in input:
             global text1
             text1=input
-            chat_response= "In how many minutes"
+            chat_response= "In how many minutes?"
             return chat_response,"output_07"
         
         elif 'minutes' in input or 'minute' in input:
@@ -112,7 +118,7 @@ def process_text(input):
             print(tim[0])
             print("global text :"+ text1)
 
-            indx=text1.lower().replace("remind me","hey reminding you")
+            indx=text1.lower().replace("remind me","Hey reminding you")
             #indx="hey reminding you"
             print(indx)
             args1=[tim[0]*30,indx]
@@ -125,10 +131,16 @@ def process_text(input):
         
         elif "good night" in input or "bye" in input or "good bye" in input:
             return "See you later","output_02"
-            
+
+        elif "thank you" in input or "thanks":
+            return "You're welcome","output_12"
+
+        elif "stupid" in input:
+            return "You too","output_13"
+
         else:
             
-            return "Null","hello"
+            return "Say that again?","output_14"
 
     except :
         
